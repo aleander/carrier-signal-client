@@ -31,7 +31,11 @@ module.exports = {
       asyncArrow: "always"
     }],
     "quote-props": ["error", "consistent"],
-    "quotes": ["error", "double"]
+    "quotes": ["error", "double"],
+    "sort-imports": ["error", {
+      "ignoreCase": true,
+      "allowSeparatedGroups": true
+    }]
   },
   overrides: [
     {
