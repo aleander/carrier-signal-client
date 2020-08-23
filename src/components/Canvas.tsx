@@ -20,7 +20,7 @@ function SystemCanvas({ height, width, children }: SystemCanvasProps) {
       const context = canvasRef.current.getContext("2d")
       setContext(context)
     }
-  }, [frameCount])
+  }, [canvasRef.current])
 
   React.useEffect(() => {
     const frameId = requestAnimationFrame(() => {
