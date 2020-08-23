@@ -1,6 +1,7 @@
 import React, { useEffect, useState } from "react"
 
 import { Body, Bounds, Message } from "@app/types"
+import AnimationProxy from "./AnimationProxy"
 import Canvas from "./Canvas"
 import Client from "@app/client"
 import RenderedBody from "./RenderedBody"
@@ -49,12 +50,12 @@ function Home() {
       <h1>Hello, World!</h1>
       <p>Iteration: { iteration }, message count: { messageCount }, nObjects: { bodies.length }.</p>
       <Canvas height={actualBounds.height} width={actualBounds.width}>
-        {bodies.map((body) => <RenderedBody
+        <AnimationProxy things={bodies} factory={(body) => <RenderedBody
           key={body.id}
           body={body}
           bounds={bounds}
           actualBounds={actualBounds}
-        />)}
+        />}/>
       </Canvas>
     </>
   )
